@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,EmailStr
 from datetime import time,date
 
 class CreateCalorieEvent(BaseModel):
@@ -6,3 +6,9 @@ class CreateCalorieEvent(BaseModel):
     time:time
     text:str
     noOfCalories:int
+
+class User(BaseModel):
+    username: str
+    password: str
+    email: EmailStr
+    role: str
